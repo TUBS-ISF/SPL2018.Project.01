@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+    <feature automatic="selected" name="PicLibSPL"/>
+    <feature automatic="selected" name="UI"/>
+    <feature automatic="selected" name="Library"/>
+    <feature automatic="selected" name="DataInterface"/>
+    <feature automatic="selected" name="Inport"/>
+    <feature automatic="selected" name="Delete"/>
+    <feature automatic="selected" name="FromLibrary"/>
+</configuration>
