@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<plugins>
+	<interface id="interfaces.IButton">
+		<class>DeletePic</class></interface></plugins>

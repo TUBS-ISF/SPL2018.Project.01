@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+    <properties/>
+    <struct>
+        <and abstract="true" mandatory="true" name="PicLibSPL-Task3">
+            <alt abstract="true" mandatory="true" name="UI">
+                <description>
+User Interface for managing the library
+</description>
+                <and name="GUI">
+                    <description>
+Graphical User Interface
+For interaction between user and SP
+</description>
+                    <alt abstract="true" name="ColorScheme">
+                        <description>
+ColorScheme
+provides appirence settings for user
+</description>
+                        <feature abstract="true" name="White">
+                            <description>
+white colorscheme
+</description>
+                        </feature>
+                        <feature abstract="true" name="Black">
+                            <description>
+black colorscheme
+</description>
+                        </feature>
+                        <feature abstract="true" name="Blue">
+                            <description>
+blue colorscheme
+</description>
+                        </feature>
+                    </alt>
+                    <and abstract="true" mandatory="true" name="InputKey">
+                        <description>
+Input modality for interaction
+</description>
+                        <feature abstract="true" mandatory="true" name="MouseInput">
+                            <description>
+MouseInput
+Provides mouse input modality
+</description>
+                        </feature>
+                        <feature abstract="true" name="SearchKey">
+                            <description>
+SearchKey
+Provides search function
+</description>
+                        </feature>
+                        <feature abstract="true" name="SortKey">
+                            <description>
+SortKey
+Provides sort function
+</description>
+                        </feature>
+                        <feature abstract="true" mandatory="true" name="DeleteKey">
+                            <description>
+DeleteKey
+Provides delete function
+</description>
+                        </feature>
+                    </and>
+                    <feature abstract="true" mandatory="true" name="Display">
+                        <description>
+Display
+provides visual output for user. Displays pictures and pictrure arrangement
+</description>
+                    </feature>
+                </and>
+                <feature abstract="true" name="CLI">
+                    <description>
+Comand Line Interface
+For interaction between user and SP
+</description>
+                </feature>
+            </alt>
+            <and abstract="true" mandatory="true" name="Library">
+                <description>
+Library
+Is the collection of pictures.
+</description>
+                <or abstract="true" name="Sort">
+                    <description>
+Sort
+Different Sort criteria for collection
+</description>
+                    <feature abstract="true" name="ByName">
+                        <description>
+ByName
+Sorts collection by name alphabetically
+</description>
+                    </feature>
+                    <feature abstract="true" name="ByPlace">
+                        <description>
+ByPlace
+Sorts collection by place alphabetically
+</description>
+                    </feature>
+                    <feature abstract="true" name="ByTime">
+                        <description>
+ByTime
+Sorts collection by time
+</description>
+                    </feature>
+                    <feature abstract="true" name="ByInport">
+                        <description>
+ByInport
+Sorts collection by inport alphabetically
+</description>
+                    </feature>
+                    <feature abstract="true" name="ByFormat">
+                        <description>
+ByFormat
+Sorts collection by format alphabetically
+</description>
+                    </feature>
+                </or>
+                <feature abstract="true" name="Search">
+                    <description>
+Search
+Searches the library for a specific picture
+</description>
+                </feature>
+                <and mandatory="true" name="Picture">
+                    <or abstract="true" mandatory="true" name="PictureInfo">
+                        <description>
+Picture Information
+Contains all information about a picture
+</description>
+                        <feature name="Name">
+                            <description>
+Name
+Contains the name of a picture
+</description>
+                        </feature>
+                        <feature name="Place">
+                            <description>
+Place
+Contains the place information of a picture
+</description>
+                        </feature>
+                        <feature name="Time">
+                            <description>
+Time
+Contains information about the time when the picture was taken/created
+</description>
+                        </feature>
+                        <feature name="Format">
+                            <description>
+Format
+Information about whitch dataformat the picture is
+</description>
+                        </feature>
+                        <feature name="Resource"/>
+                    </or>
+                </and>
+            </and>
+            <and abstract="true" mandatory="true" name="DataInterface">
+                <description>
+DataInterface
+Handels the inport and export of pictures. Can also erease pictures from library or disk
+</description>
+                <or abstract="true" name="Inport">
+                    <description>
+Inport
+Handels the different inport possibilitys
+</description>
+                    <feature name="addPic"/>
+                    <feature abstract="true" name="URL">
+                        <description>
+URL
+Inport from URL
+</description>
+                    </feature>
+                    <feature abstract="true" name="LANInport">
+                        <description>
+LANInport
+Inport from local area network
+</description>
+                    </feature>
+                    <feature abstract="true" name="BluetoothInport">
+                        <description>
+BluetoothInport
+Inport from Bluetooth
+</description>
+                    </feature>
+                </or>
+                <or abstract="true" name="Export">
+                    <description>
+Export
+Handels the different Export possibilitys
+</description>
+                    <feature abstract="true" name="LANExport">
+                        <description>
+LANExport
+Export to local area network device
+</description>
+                    </feature>
+                    <feature abstract="true" name="BluetoothExport">
+                        <description>
+BluetoothExport
+Export to bluetooth device
+</description>
+                    </feature>
+                </or>
+                <and abstract="true" mandatory="true" name="Delete">
+                    <description>
+Delete
+Handels the different delete possibilitys
+</description>
+                    <feature name="deletePic">
+                        <description>
+FromLibrary
+Deletes picture from library
+</description>
+                    </feature>
+                    <feature abstract="true" name="FromDisk">
+                        <description>
+FromDisk
+Deletes picture from library and local storagesystem
+</description>
+                    </feature>
+                </and>
+            </and>
+        </and>
+    </struct>
+    <constraints>
+        <rule>
+            <imp>
+                <var>ByFormat</var>
+                <var>Format</var>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <var>ByName</var>
+                <var>Name</var>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <var>ByPlace</var>
+                <var>Place</var>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <var>ByTime</var>
+                <var>Time</var>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <var>SortKey</var>
+                <var>Sort</var>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <var>SearchKey</var>
+                <var>Search</var>
+            </imp>
+        </rule>
+    </constraints>
+    <calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+    <comments/>
+    <featureOrder userDefined="false"/>
+</featureModel>
