@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/Format.jar"/>
+	<classpathentry kind="lib" path="lib/GUI.jar"/>
+	<classpathentry kind="lib" path="lib/Name.jar"/>
+	<classpathentry kind="lib" path="lib/Picture.jar"/>
+	<classpathentry kind="lib" path="lib/Place.jar"/>
+	<classpathentry kind="lib" path="lib/Resource.jar"/>
+	<classpathentry kind="lib" path="lib/Time.jar"/>
+	<classpathentry kind="lib" path="lib/addPic.jar"/>
+	<classpathentry kind="lib" path="lib/deletePic.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
