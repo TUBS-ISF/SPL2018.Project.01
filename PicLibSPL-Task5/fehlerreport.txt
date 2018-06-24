@@ -1,0 +1,3 @@
+Habe fehler bei der Anzeige. Mal werden die buttons angezeigt 
+mal nicht und meine liste der bilder wird gar nicht angezeigt.
+habe alles mögliche probiert komme aber nicht auf die lösung. 
